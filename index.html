@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김영근 | AI 부문 기술 컨설턴트 & 아키텍트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<style>
+:root {
+--google-blue: #1a73e8; --google-blue-dark: #1557b0; --google-blue-alpha: rgba(26, 115, 232, 0.06);
+--text-primary: #1f2124; --text-secondary: #5f6368; --text-light: #80868b;
+--bg-primary: #ffffff; --bg-secondary: #f8f9fa; --bg-card: #ffffff;
+--border-light: #e8eaed; --border-medium: #dadce0;
+--shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+--shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+--shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Roboto', 'Noto Sans KR', sans-serif; color: var(--text-primary); background-color: var(--bg-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+section { padding: 100px 24px; max-width: 1140px; margin: 0 auto; }
+header { position: fixed; top: 0; left: 0; right: 0; height: 70px; background-color: rgba(25, 25, 25, 0.95); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; z-index: 1000; box-shadow: var(--shadow-md); }
+.logo { font-size: 19px; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 10px; letter-spacing: -0.3px; }
+.logo i { color: var(--google-blue); font-size: 24px; }
+nav { display: flex; gap: 8px; }
+nav a { color: #e8eaed; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.25s ease; }
+nav a:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.1); }
+main { margin-top: 70px; }
+#home { padding: 140px 24px 100px 24px; background: radial-gradient(120% 120% at 50% 10%, #ffffff 60%, #edf2fa 100%); text-align: center; }
+.badge-top { display: inline-block; background-color: var(--google-blue-alpha); color: var(--google-blue); font-size: 13px; font-weight: 700; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 0.5px; }
+.hero-title { font-size: 42px; font-weight: 700; line-height: 1.3; letter-spacing: -1px; color: #111214; max-width: 850px; margin: 0 auto 24px auto; }
+.hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 760px; margin: 0 auto 40px auto; font-weight: 400; }
+.cta-button { display: inline-flex; align-items: center; background-color: var(--google-blue); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 500; font-size: 15px; text-decoration: none; box-shadow: var(--shadow-sm); transition: all 0.2s ease; gap: 8px; }
+.cta-button:hover { background-color: var(--google-blue-dark); box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); transform: translateY(-1px); }
+.profile-container { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; margin-top: 80px; text-align: left; }
+@media (max-width: 900px) { .profile-container { grid-template-columns: 1fr; } .hero-title { font-size: 32px; section { padding: 60px 24px; } } }
+.card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-lg); }
+.profile-card { background-color: var(--bg-secondary); border: 1px solid var(--border-medium); }
+.profile-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 24px; color: #111214; }
+.info-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; font-size: 15px; }
+.info-row i { color: var(--google-blue); margin-top: 2px; }
+.info-label { font-weight: 500; color: var(--text-primary); display: block; }
+.info-val { color: var(--text-secondary); margin-top: 2px; }
+.section-header { text-align: left; margin-bottom: 48px; }
+.section-title { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 12px; color: #111214; }
+.section-title i { color: var(--google-blue); font-size: 28px; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.skill-box { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; box-shadow: var(--shadow-md); transition: transform 0.2s, box-shadow 0.2s; }
+.skill-box:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.skill-box h3 { font-size: 16px; font-weight: 700; color: var(--google-blue); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid var(--google-blue); padding-left: 10px; }
+.tag-container { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background-color: var(--bg-secondary); color: var(--text-primary); padding: 8px 14px; border-radius: 8px; font-size: 13.5px; font-weight: 500; border: 1px solid var(--border-light); transition: all 0.2s ease; }
+.tag:hover { background-color: var(--google-blue-alpha); color: var(--google-blue); border-color: rgba(26, 115, 232, 0.2); }
+.experience-timeline { display: flex; flex-direction: column; gap: 32px; }
+.experience-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-md); display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+@media (max-width: 768px) { .experience-card { grid-template-columns: 1fr; gap: 16px; padding: 28px; } }
+.exp-meta { border-right: 1px solid var(--border-light); padding-right: 16px; }
+@media (max-width: 768px) { .exp-meta { border-right: none; border-bottom: 1px solid var(--border-light); padding-right: 0; padding-bottom: 16px; } }
+.exp-date { font-size: 14px; font-weight: 700; color: var(--google-blue); margin-bottom: 6px; }
+.exp-role { font-size: 13px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+.exp-body h3 { font-size: 20px; font-weight: 700; color: #111214; margin-bottom: 16px; }
+.exp-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 16px; }
+.exp-bullets { list-style-type: none; }
+.exp-bullets li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-primary); font-size: 14.5px; }
+.exp-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--google-blue); font-weight: 700; }
+.edu-item { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--border-light); }
+.edu-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+footer { background-color: #111214; padding: 48px 24px; text-align: center; font-size: 13px; color: #80868b; border-top: 1px solid #202124; }
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><i class="material-icons-outlined">verified_user</i>김영근 | AI 아키텍트 & 컨설턴트</div>
+<nav><a href="#home">프로필</a><a href="#skills">역량 기술</a><a href="#experience">컨설팅 이력</a></nav>
+</header>
+<main>
+<section id="home">
+<span class="badge-top">ENTERPRISE AI ARCHITECT</span>
+<h1 class="hero-title">인공지능 · 빅데이터 · 자바 엔터프라이즈 컨설팅 및 분석 설계 개발</h1>
+<p class="hero-subtitle">26년의 풍부한 실무 경험을 바탕으로 Multi-Agent Systems, Agentic AI, 고도화된 RAG 파이프라인 아키텍처를 설계합니다. 역지사지의 자세로 비즈니스에 핵심 가치를 부여하는 인프라를 실현합니다.</p>
+<a href="mailto:miso0707@naver.com" class="cta-button"><i class="material-icons-outlined" style="font-size: 18px;">mail</i> 전문 아키텍트 문의</a>
+<div class="profile-container">
+<div class="card profile-card">
+<h2>인적 사항 및 글로벌 역량</h2>
+<div class="info-row"><i class="material-icons-outlined">person</i><div><span class="info-label">이름</span><span class="info-val">김영근 (1974년생)</span></div></div>
+<div class="info-row"><i class="material-icons-outlined">contact_phone</i><div><span class="info-label">연락처 및 이메일</span><span class="info-val">010-4589-1987 / miso0707@naver.com</span></div></div>
+<div class="info-row"><i class="material-icons-outlined">place</i><div><span class="info-label">주요 활동지</span><span class="info-val">경기 성남시 수정구 기반 / 전국 대응</span></div></div>
+<div class="info-row"><i class="material-icons-outlined">g_translate</i><div><span class="info-label">글로벌 커뮤니케이션</span><span class="info-val">일본어 비즈니스 회화 가능 (JLPT 2급 취득)</span></div></div>
+</div>
+<div class="card" style="text-align: left;">
+<h2 class="section-title" style="margin-bottom: 24px; font-size: 20px;"><i class="material-icons-outlined">school</i> 최고 학력 및 연구 실적</h2>
+<div class="edu-item"><div class="exp-date">2023.03 ~ 2026.02</div><div class="info-label" style="font-size: 16px;">서울시립대학교 대학원 컴퓨터과학과 박사과정 수료</div></div>
+<div class="edu-item"><div class="exp-date">2020.08 ~ 2023.02</div><div class="info-label" style="font-size: 16px;">서울시립대학교 대학원 컴퓨터과학과 석사 졸업</div><p class="info-val" style="font-size: 14px; margin-top: 6px; background-color: var(--bg-secondary); padding: 12px; border-radius: 6px;"><strong>석사 학위 논문:</strong> "부동산 소유권 NFT와 FT 분할 판매 및 거래 시스템 설계"<br><strong>학술 활동:</strong> 한국정보처리학회 ACK 2022 통과 게재 및 KIPS Transactions 학술지 게재 수락.</p></div>
+</div>
+</div>
+</section>
+<section id="skills" style="background-color: var(--bg-secondary); max-width: 100%;">
+<div style="max-width: 1140px; margin: 0 auto;">
+<div class="section-header"><h2 class="section-title"><i class="material-icons-outlined">layers</i> Core 기술 스택 스코프</h2></div>
+<div class="skills-grid">
+<div class="skill-box">
+<h3>AI & Big Data Architecture</h3>
+<div class="tag-container">
+<div class="tag">Multi-Agent Systems</div><div class="tag">Agentic AI</div><div class="tag">LLMOps 아키텍처</div><div class="tag">LangChain Framework</div><div class="tag">Milvus (Vector DB)</div><div class="tag">RAG 파이프라인 고도화</div><div class="tag">FastAPI</div><div class="tag">Python</div><div class="tag">Hadoop Ecosystem</div><div class="tag">MongoDB</div>
+</div>
+</div>
+<div class="skill-box">
+<h3>Enterprise Full-Stack</h3>
+<div class="tag-container">
+<div class="tag">JAVA 핵심 백엔드</div><div class="tag">JSP / Spring Boot</div><div class="tag">MyBatis / iBatis</div><div class="tag">Oracle / MySQL / Tibero</div><div class="tag">Vue.js / Nexacro UI</div><div class="tag">Linux 환경제어</div><div class="tag">RestAPI 설계</div>
+</div>
+</div>
+<div class="skill-box">
+<h3>Blockchain & FinTech</h3>
+<div class="tag-container">
+<div class="tag">DApp (ERC-20, 721, 1155)</div><div class="tag">합의 알고리즘 튜닝</div><div class="tag">KYC / AML 연동 아키텍처</div><div class="tag">트래블룰 (CODE) 연동 솔루션</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="experience">
+<div class="section-header"><h2 class="section-title"><i class="material-icons-outlined">assignment_turned_in</i> 주요 컨설팅 및 아키텍처 구축 이력</h2></div>
+<div class="experience-timeline">
+<div class="experience-card">
+<div class="exp-meta"><div class="exp-date">2026.01 ~ 현재</div><div class="exp-role">기술 컨설턴트</div></div>
+<div class="exp-body">
+<h3>SK하이닉스 MES AI Agent 구축 용역</h3>
+<p class="exp-desc">제조실행시스템(MES) 내 거대언어모델 기반의 엔터프라이즈 AI 연동 가이드 및 방향성 컨설팅을 주도합니다.</p>
+<ul class="exp-bullets">
+<li>LLM 기반 AI Agent 도메인의 아키텍처 설계 방향성 수립</li>
+<li>산업 특화 복잡 계층형 MES 환경에 맞춘 RAG 기반 문서 검색 파이프라인 설계 및 프롬프트 최적화</li>
+<li>실현 가능한 가이드라인 수립을 위한 동작 시나리오 정의 및 기술 검증 샘플 소스 코드 개발</li>
+</ul>
+</div>
+</div>
+<div class="experience-card">
+<div class="exp-meta"><div class="exp-date">2025.09 ~ 2025.12</div><div class="exp-role">AI Core 아키텍트</div></div>
+<div class="exp-body">
+<h3>SK On 특화 AX Platform 기반 AI Agent 구축</h3>
+<p class="exp-desc">글로벌 배터리 제조 현장 데이터를 지능화하기 위한 핵심 AI 솔루션 인프라를 설계했습니다.</p>
+<ul class="exp-bullets">
+<li>대규모 사내 정형 및 비정형 지식 데이터를 AI가 유기적으로 탐색할 수 있는 RAG 엔진 파이프라인 총괄</li>
+<li>LangChain, Milvus(벡터 데이터베이스), FastAPI 기반의 높은 처리량을 보장하는 백엔드 AI 아키텍처 빌드</li>
+</ul>
+</div>
+</div>
+<div class="experience-card">
+<div class="exp-meta"><div class="exp-date">2024.11 ~ 2025.05</div><div class="exp-role">개발 PL / 수석연구원</div></div>
+<div class="exp-body">
+<h3>CJ올리브네트웍스 생성형 AI 기반 지능형 검색엔진 구축 사업</h3>
+<p class="exp-desc">생성형 기반 검색엔진 아키텍처 파트의 리더 역할을 담당하여 실무 적용을 성공적으로 완수했습니다.</p>
+<ul class="exp-bullets">
+<li>전체 프론트엔드 연동 영역, AI 핵심 모델링, 프롬프트 엔지니어링 파트 간 유기적 리드 수행</li>
+<li>성공적 비즈니스 도입을 위한 가이드라인 정립 및 제안 PM 업무 동시 수행</li>
+</ul>
+</div>
+</div>
+<div class="experience-card">
+<div class="exp-meta"><div class="exp-date">2023.02 ~ 2024.01</div><div class="exp-role">컨설팅 본부 리더</div></div>
+<div class="exp-body">
+<h3>국무조정실 스마트규제시스템 컨설팅 및 PoC 검증</h3>
+<p class="exp-desc">정부 부처 스마트 행정 구현을 위한 정보화전략계획(ISP)을 총괄 설계했습니다.</p>
+<ul class="exp-bullets">
+<li>하둡 에코시스템 및 대용량 MongoDB 환경 연동 아키텍처 기획 및 컨설팅 리드</li>
+<li>Python 및 Flask 기반 시멘틱 검색엔진 및 문서 요약 알고리즘의 유효성 검증 PoC 총괄 빌드</li>
+</ul>
+</div>
+</div>
+<div class="experience-card">
+<div class="exp-meta"><div class="exp-date">2002 ~ 2023 주요 요약</div><div class="exp-role">팀장 / 리드 개발자</div></div>
+<div class="exp-body">
+<h3>엔터프라이즈 레벨 메이저 프로젝트 리드 실적</h3>
+<ul class="exp-bullets">
+<li><strong>삼성금융그룹 차세대 ERP</strong>: 대형 리드급 엔지니어로서 금융 코어 가입설계 시스템 구축 완수</li>
+<li><strong>가상자산거래소 코엔코코리아</strong>: 개발 총괄 팀장으로서 분산 원장 기반 거래 인프라 제어, AML/KYC 및 메이저 거래소 간 트래블룰(CODE) 연동 성공</li>
+<li><strong>글로벌 비즈니스 인프라</strong>: 미국 삼성전자 법인(STA) 영업관리 인사이더 허브 구축(텍사스 주 파견 근무), 일본 사가시청 자동 교부 인프라 구축 완수</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<p>© 2026 Young-Geun Kim. All rights reserved.</p>
+<p style="margin-top: 8px; font-size: 11px; color: #5f6368; font-weight: 300;">본 포트폴리오는 기술 컨설팅, 이력 증빙 및 파트너십 제안 목적 이외의 무단 복제 및 전재를 금합니다.</p>
+</footer>
+</body>
+</html>
